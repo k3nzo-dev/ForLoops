@@ -3,7 +3,7 @@
  * Write a description of class ForLoops here.
  *
  * @author Lorenzo Boscho
- * @version 
+ * @version 1.0
  */
 public class ForLoops
 {
@@ -14,12 +14,24 @@ public class ForLoops
     //you'll want your Scanner object (and if you are usuing a Utility object)
     //  as instance variables here, so they can be used in all the methods
     
-    public void countVowels()
-    {
-        
-        System.out.println("NO CODE YET!");
-    }
+    public int countVowels(String text) {
+        int count = 0;
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) == 'a') {
+                count++;
+            } else if (text.charAt(i) == 'e') {
+                count++;
+            } else if (text.charAt(i) == 'i') {
+                count++;
+            } else if (text.charAt(i) == 'o') {
+                count++;
+            } else if (text.toLowerCase().charAt(i) == 'u') {
+                count++;
+            }
 
+        }
+        return  count;
+    }
     public void reverseIt()
     {
         System.out.println("NO CODE YET!"); 

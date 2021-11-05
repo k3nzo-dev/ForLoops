@@ -29,10 +29,7 @@ public class ForLoopsRunner
                 "4. Show Board\n"    +
                 "5. Show Primes\n"   +
                 "6. Guess For Dollars\n" +
-                "7. (your own here)\n"   + 
-                "8. Count Consonants\n"  + 
-                "9. Show fancy board\n"  +
-                "10. Reverse by word\n";
+                "7. (your own here)\n";
       
          System.out.print("\n" + list + "Your choice: ");
             
@@ -54,7 +51,9 @@ public class ForLoopsRunner
             switch(choice)
             {
                case 1:
-                  f.countVowels();
+                  System.out.println("What text would you like to check for vowels?");
+                  String text = s.nextLine();
+                  System.out.println("There are " + f.countVowels(text) + " vowels in " + text);
                   break;
                case 2:
                   f.reverseIt();
@@ -73,16 +72,7 @@ public class ForLoopsRunner
                   break;
                case 7:
                   f.yourOwn();
-                  break;
-               case 8:
-                  f.countConsonants();
-                  break;                  
-               case 9:
-                  f.showFancyBoard();
-                  break;                 
-               case 10:
-                  f.reverseByWord();
-                  break;    
+
                default:
                   break;
             }
