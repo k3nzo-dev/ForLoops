@@ -1,3 +1,4 @@
+import javax.swing.text.Style;
 import java.util.Scanner;
 /**
  * Gives user the choice of which forloop methods to run
@@ -29,7 +30,7 @@ public class ForLoopsRunner
                 "4. Show Board\n"    +
                 "5. Show Primes\n"   +
                 "6. Guess For Dollars\n" +
-                "7. (your own here)\n";
+                "7. Decrypt\n";
       
          System.out.print("\n" + list + "Your choice: ");
             
@@ -65,15 +66,19 @@ public class ForLoopsRunner
                   System.out.println("What string you you like to encrypt?");
                   String encryptImput = s.nextLine();
                   System.out.println("How much you you like to encrypt by?");
-                  int encryptAmount = s.nextInt();
+                  int encryptAmt = s.nextInt();
 
-                  System.out.println(f.encrypt(encryptImput, encryptAmount));
+                  System.out.println(f.encrypt(encryptImput, encryptAmt));
                   break;
                case 4:
                   f.showBoard();
                   break;
                case 5:
-                  f.showPrimes();
+                  System.out.println("What in the smallest number you want to test?");
+                  long imput1 = s.nextLong();
+                  System.out.println("What in the largest number you want to test?");
+                  long imput2 = s.nextLong();
+                  System.out.println(f.showPrimes(imput1, imput2));
                   break;
                case 6:
                   f.guessForDollars();
@@ -82,11 +87,9 @@ public class ForLoopsRunner
                   System.out.println("What string you you like to decrypt?");
                   String decryptImput = s.nextLine();
                   System.out.println("What amount would you like to decrypt by?");
-                  int decyptChoice = s.nextInt();
+                     int decryptAmt = s.nextInt();
 
-                     int decryptAmount = s.nextInt();
-
-                 System.out.println(f.decrypt(decryptImput,decryptAmount));
+                 System.out.println(f.decrypt(decryptImput,decryptAmt));
 
                default:
                   break;
