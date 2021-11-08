@@ -35,7 +35,9 @@ public class ForLoopsRunner
             
             //get choice number:
          choice = s.nextInt();
-            
+
+
+
             //clear the newline character still left in the stream:
          s.nextLine();
             //blank line for better readability:
@@ -50,6 +52,7 @@ public class ForLoopsRunner
                 //calls method associated with given choice:
             switch(choice)
             {
+
                case 1:
                   System.out.println("What text would you like to check for vowels?");
                   String text = s.nextLine();
@@ -59,7 +62,12 @@ public class ForLoopsRunner
                   f.reverseIt();
                   break;
                case 3:
-                  f.encrypt();
+                  System.out.println("What string you you like to encrypt?");
+                  String encryptImput = s.nextLine();
+                  System.out.println("How much you you like to encrypt by?");
+                  int encryptAmount = s.nextInt();
+
+                  System.out.println(f.encrypt(encryptImput, encryptAmount));
                   break;
                case 4:
                   f.showBoard();
@@ -71,7 +79,14 @@ public class ForLoopsRunner
                   f.guessForDollars();
                   break;
                case 7:
-                  f.yourOwn();
+                  System.out.println("What string you you like to decrypt?");
+                  String decryptImput = s.nextLine();
+                  System.out.println("What amount would you like to decrypt by?");
+                  int decyptChoice = s.nextInt();
+
+                     int decryptAmount = s.nextInt();
+
+                 System.out.println(f.decrypt(decryptImput,decryptAmount));
 
                default:
                   break;

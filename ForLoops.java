@@ -11,7 +11,7 @@ public class ForLoops
     //   user, use .nextLine(), NOT .next(), even if the user is entering just 
     //   one word!!!
     
-    //you'll want your Scanner object (and if you are usuing a Utility object)
+    //you'll want your Scanner object (and if you are using a Utility object)
     //  as instance variables here, so they can be used in all the methods
     
     public int countVowels(String text) {
@@ -37,9 +37,22 @@ public class ForLoops
         System.out.println("NO CODE YET!"); 
     }
 
-    public void encrypt()
-    {
-        System.out.println("NO CODE YET!");  
+    public String encrypt(String imput, int shiftAmt){
+       String fnlText = "";
+        for (int i = 0; i < imput.length(); i++) {
+            char charHolder = imput.charAt(i);
+            for (int j = 0; j < shiftAmt; j++) {
+                if (charHolder == 'z') {
+                    charHolder = 'a';
+                } else {
+
+                    charHolder++;
+                }
+            }
+            fnlText = fnlText + charHolder;
+        }
+
+        return fnlText;
     }
     
     public void showBoard()
@@ -57,26 +70,24 @@ public class ForLoops
         System.out.println("NO CODE YET!");
     }
 
-    public void yourOwn()
+    public String decrypt(String imput, int shiftAmt)
     {
-        System.out.println("NO CODE YET!"); 
-    }
+        String fnlText = "";
+        for (int i = 0; i < imput.length(); i++) {
+            char charHolder = imput.charAt(i);
+            for (int j = 0; j < shiftAmt; j++) {
+                if (charHolder == 'a') {
+                    charHolder = 'z';
+                } else {
 
-    /**
-     * THESE 3 ARE HONORS ONLY:
-     */
-    public void countConsonants()
-    {
-        System.out.println("NO CODE YET!"); 
-    }
+                    charHolder--;
+                }
+            }
+            fnlText = fnlText + charHolder;
+        }
 
-    public void showFancyBoard()
-    {
-        System.out.println("NO CODE YET!");
-    }
-
-    public void reverseByWord()
-    {
-        System.out.println("NO CODE YET!");  
+        return fnlText;
     }
 }
+
+
