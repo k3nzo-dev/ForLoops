@@ -85,6 +85,12 @@ public class ForLoops {
             System.out.println("");
         }
 
+    /**
+     *
+     * @param min The smallest number that will be tested for primeness
+     * @param max The largest number that will be tested for primeness
+     * @return the number of primes in the range of min and max
+     */
     public ArrayList showPrimes(long min, long max) {
         ArrayList primes = new ArrayList();
         boolean isPrime = true;
@@ -113,7 +119,7 @@ public class ForLoops {
     public void guessForDollars() {
         System.out.println("NO CODE YET!");
     }
-    
+
     /**
      * Decrypts text from the Encrypt method
      * @param decryptInput The String that is decrypted
