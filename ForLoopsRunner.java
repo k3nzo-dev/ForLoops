@@ -1,9 +1,8 @@
-import javax.swing.text.Style;
 import java.util.Scanner;
 /**
  * Gives user the choice of which forloop methods to run
  *
- * @author Beckwith
+ * @author Lorenzo Boschi
  * @version 1.0
  */
 public class ForLoopsRunner
@@ -55,12 +54,15 @@ public class ForLoopsRunner
             {
 
                case 1:
-                  System.out.println("What text would you like to check for vowels?");
-                  String text = s.nextLine();
-                  System.out.println("There are " + f.countVowels(text) + " vowels in " + text);
+                  System.out.println("What string would you like to check for vowels?");
+                  String VowelText = s.nextLine();
+                  System.out.println("There are " + f.countVowels(VowelText) + " vowels in "
+                          + VowelText);
                   break;
                case 2:
-                  f.reverseIt();
+                  System.out.println("What string would you like to reverse?");
+                  String reverseText = s.nextLine();
+                  System.out.println(reverseText + " reversed is " + f.reverseIt(reverseText));
                   break;
                case 3:
                   System.out.println("What string you you like to encrypt?");
@@ -71,14 +73,23 @@ public class ForLoopsRunner
                   System.out.println(f.encrypt(encryptImput, encryptAmt));
                   break;
                case 4:
-                  f.showBoard();
+                  f.showBoard(25);
                   break;
                case 5:
                   System.out.println("What in the smallest number you want to test?");
                   long imput1 = s.nextLong();
                   System.out.println("What in the largest number you want to test?");
                   long imput2 = s.nextLong();
-                  System.out.println(f.showPrimes(imput1, imput2));
+                  System.out.println("There are " + f.showPrimes(imput1, imput2).size() +
+                          " primes between " + imput1 + " and " + imput2);
+                  System.out.println("Would you like a list of all of those primes?" +
+                          "(Enter Y,Yes, or 1)");
+                  String primesChoice = s.nextLine();
+                  if (primesChoice.equalsIgnoreCase("y")
+                          || primesChoice.equalsIgnoreCase( "yes")
+                              || primesChoice.equalsIgnoreCase("1")){
+                     System.out.println(f.showPrimes(imput1, imput2));
+                  }
                   break;
                case 6:
                   f.guessForDollars();
@@ -88,7 +99,6 @@ public class ForLoopsRunner
                   String decryptImput = s.nextLine();
                   System.out.println("What amount would you like to decrypt by?");
                      int decryptAmt = s.nextInt();
-
                  System.out.println(f.decrypt(decryptImput,decryptAmt));
 
                default:
