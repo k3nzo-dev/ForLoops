@@ -1,14 +1,15 @@
 /**
- * Write a description of class ForLoops here.
+ * The ForLoops Class is methods 7 methods of various complexity
  *
  * @author Lorenzo Boschi
  * @version 1.0
  */
-
-import java.awt.*;
+import java.util.Scanner;
 import java.util.ArrayList;
 
 public class ForLoops {
+
+    Scanner s = new Scanner(System.in);
 
     /**
      * Counts the vowels in a String
@@ -63,7 +64,6 @@ public class ForLoops {
                 if (charHolder == 'z') {
                     charHolder = 'a';
                 } else {
-
                     charHolder++;
                 }
             }
@@ -73,28 +73,44 @@ public class ForLoops {
         return fnlText;
     }
 
-    //FINISH TONIGHT work on getting the grid check notes
+    /**
+     *Shows a checkered board of unicode characters
+     * SPECIAL FEATURES: uses 2 random unicode characters
+     * @param size the length and width of the board
+     */
+
     public void showBoard(int size) {
+
+        char char1 = (char)((int)(Math.random() * 143859));
+        char char2 = (char)((int)(Math.random() * 143859));
+
         for (int y = 0; y < size; y++) {
             for (int x = 0; x < size; x++) {
-                    System.out.print("☤   ");
-
+                if((x +y) % 2 == 0){
+                System.out.print(char1 + "   ");
+                }else{
+                    System.out.print(char2 + "   ");
                 }
-                    System.out.print("☢   ");
             }
             System.out.println("");
         }
 
+        }
+
     /**
+     *Shows the amount of prime numbers in a range and can print all of them if asked
      *
      * @param min The smallest number that will be tested for primeness
      * @param max The largest number that will be tested for primeness
      * @return the number of primes in the range of min and max
      */
+
     public ArrayList showPrimes(long min, long max) {
         ArrayList primes = new ArrayList();
         boolean isPrime = true;
-
+        if (max< min){
+            
+        }
         for (long number = min; number <= max; number++) {
             if(number != 2) {
                 if (number % 2 == 0) {
@@ -117,7 +133,32 @@ public class ForLoops {
     }
 
     public void guessForDollars() {
-        System.out.println("NO CODE YET!");
+
+       ArrayList pastGuess = new ArrayList();
+       int range1 = (int)(Math.random() * 1000);
+       int range2 = range1 + (int)(Math.random() * (1000));
+       int goalNumber = range1 + (int)(Math.random() * (range2 - range1));
+
+       System.out.println(range1 + " " + range2 + " " +goalNumber); //FOR TESTING
+
+        boolean correct = false;
+        while(!correct){
+            if (pastGuess.size() > 0)
+                System.out.println("Your past guesses were: " + pastGuess);
+        System.out.println("Guess a number between " + range1 + " and " + range2);
+        int guess = s.nextInt();
+        if(guess == goalNumber){
+            System.out.println("You were correct!");
+            correct = true;
+        }else if(guess > goalNumber){
+            System.out.println("You were too high, try again.");
+            pastGuess.add(guess);
+        }else{
+            System.out.println("You were too low, try again");
+            pastGuess.add(guess);
+        }
+
+        }
     }
 
     /**

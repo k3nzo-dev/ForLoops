@@ -73,7 +73,9 @@ public class ForLoopsRunner
                   System.out.println(f.encrypt(encryptImput, encryptAmt));
                   break;
                case 4:
-                  f.showBoard(25);
+                  System.out.println("What size would you like the board to be?");
+                  int boardSize = s.nextInt();
+                  f.showBoard(boardSize);
                   break;
                case 5:
                   System.out.println("What in the smallest number you want to test?");
