@@ -46,7 +46,7 @@ public class ForLoops {
         {
             fnlTxt += input.charAt(input.length() - (i+1));
         }
-        fnlTxt += fnlTxt.toLowerCase();
+        fnlTxt += fnlTxt.toLowerCase(); //to fix case problems
         return fnlTxt;
     }
 
@@ -60,6 +60,7 @@ public class ForLoops {
         String fnlText = "";
         for (int i = 0; i < encryptImput.length(); i++) {
             char charHolder = encryptImput.charAt(i);
+
             for (int j = 0; j < shiftAmt; j++) {
                 if (charHolder == 'z') {
                     charHolder = 'a';
@@ -67,7 +68,7 @@ public class ForLoops {
                     charHolder++;
                 }
             }
-            fnlText = fnlText + charHolder;
+            fnlText += charHolder;
         }
 
         return fnlText;
@@ -78,15 +79,15 @@ public class ForLoops {
      * SPECIAL FEATURES: uses 2 random unicode characters
      * @param size the length and width of the board
      */
-
     public void showBoard(int size) {
 
-        char char1 = (char)((int)(Math.random() * 143859));
+        char char1 = (char)((int)(Math.random() * 143859));//generates a random unicode char
         char char2 = (char)((int)(Math.random() * 143859));
 
         for (int y = 0; y < size; y++) {
             for (int x = 0; x < size; x++) {
-                if((x +y) % 2 == 0){
+                if((x +y) % 2 == 0)//if x + y is even then it is the first square
+                {
                 System.out.print(char1 + "   ");
                 }else{
                     System.out.print(char2 + "   ");
@@ -99,17 +100,17 @@ public class ForLoops {
 
     /**
      *Shows the amount of prime numbers in a range and can print all of them if asked
+     *SPECIAL FEATURES: use of throw/catch
      *
      * @param min The smallest number that will be tested for primeness
      * @param max The largest number that will be tested for primeness
      * @return the number of primes in the range of min and max
      */
-
     public ArrayList showPrimes(long min, long max) {
         ArrayList primes = new ArrayList();
         boolean isPrime = true;
         if (max< min){
-            
+            throw new ArithmeticException("Your minimum is larger than your maximum");
         }
         for (long number = min; number <= max; number++) {
             if(number != 2) {
@@ -138,10 +139,10 @@ public class ForLoops {
        int range1 = (int)(Math.random() * 1000);
        int range2 = range1 + (int)(Math.random() * (1000));
        int goalNumber = range1 + (int)(Math.random() * (range2 - range1));
+       boolean correct = false;
 
        System.out.println(range1 + " " + range2 + " " +goalNumber); //FOR TESTING
 
-        boolean correct = false;
         while(!correct){
             if (pastGuess.size() > 0)
                 System.out.println("Your past guesses were: " + pastGuess);
