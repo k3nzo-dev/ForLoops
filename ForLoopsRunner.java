@@ -129,6 +129,7 @@ public class ForLoopsRunner
                   break;
             }
          }
+         System.out.println();
          System.out.println("Hit ENTER to go back to the main menu...");
          s.nextLine();
       }
