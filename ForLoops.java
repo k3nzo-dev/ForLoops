@@ -5,8 +5,6 @@
  * @version 1.0
  */
 
-import javax.swing.*;
-import javax.swing.text.Style;
 import java.util.Scanner;
 import java.util.ArrayList;
 
@@ -22,7 +20,7 @@ public class ForLoops {
      */
     public int countVowels(String text) {
         int count = 0;
-        for (int i = 0; i < text.length(); i++) {
+        for (int i = 0; i < text.length(); i++) { //steps through every vowel
             if (text.charAt(i) == 'a') {
                 count++;
             } else if (text.charAt(i) == 'e') {
@@ -48,7 +46,7 @@ public class ForLoops {
     public String reverseIt(String input) {
         String fnlTxt = "";
         for (int i = 0; i <= (input.length() - 1); i++) {
-            fnlTxt += input.charAt(input.length() - (i + 1));
+            fnlTxt += input.charAt(input.length() - (i + 1)); // adds the furthest number to a blank text
         }
         fnlTxt += fnlTxt.toLowerCase(); //to fix case problems
         return fnlTxt;
@@ -64,10 +62,9 @@ public class ForLoops {
     public String encrypt(String encryptImput, int shiftAmt) {
         String fnlText = "";
         for (int i = 0; i < encryptImput.length(); i++) {
-            char charHolder = encryptImput.charAt(i);
-
+            char charHolder = encryptImput.charAt(i);//takes the char to encrypt
             for (int j = 0; j < shiftAmt; j++) {
-                if (charHolder == 'z') {
+                if (charHolder == 'z') { //stops Z from being a problem char
                     charHolder = 'a';
                 } else {
                     charHolder++;
@@ -94,7 +91,7 @@ public class ForLoops {
             for (int x = 0; x < size; x++) {
                 if ((x + y) % 2 == 0)//if x + y is even then it is the first square
                 {
-                    System.out.print(char1 + "   ");
+                    System.out.print(char1 + "   ");//uses tab for spacing
                 } else {
                     System.out.print(char2 + "   ");
                 }
@@ -114,7 +111,6 @@ public class ForLoops {
      */
     public ArrayList showPrimes(long min, long max) {
         ArrayList primes = new ArrayList();
-        boolean isPrime = true;
         if (max < min) {
             throw new ArithmeticException("Your minimum is larger than your maximum");
         }
@@ -152,11 +148,9 @@ public class ForLoops {
         try {
 
             while (!exit) {
-                range1 = (int) (Math.random() * 1000);
+                range1 = (int) (Math.random() * 1000);//takes a random range
                 range2 = range1 + (int) (Math.random() * (1000));
                 goalNumber = range1 + (int) (Math.random() * (range2 - range1));
-
-                System.out.println(goalNumber); //FOR TESTING
 
                 while (!correct) {
                     if (pastGuess.size() > 0)
@@ -206,7 +200,6 @@ public class ForLoops {
             System.out.println("ERROR: Guess outside of range");
         }
     }
-
 
     /**
      * Decrypts text from the Encrypt method
