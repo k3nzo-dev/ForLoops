@@ -48,7 +48,7 @@ public class ForLoops {
         for (int i = 0; i <= (input.length() - 1); i++) {
             fnlTxt += input.charAt(input.length() - (i + 1)); // adds the furthest number to a blank text
         }
-        fnlTxt += fnlTxt.toLowerCase(); //to fix case problems
+        fnlTxt = fnlTxt.toLowerCase(); //to fix case problems
         return fnlTxt;
     }
 
@@ -135,6 +135,9 @@ public class ForLoops {
         return primes;
     }
 
+    /**
+     * Plays a betting game where you guess numbers in a range
+     */
     public void guessForDollars() {
         ArrayList pastGuess = new ArrayList();
         String cont;
@@ -152,6 +155,7 @@ public class ForLoops {
                 range2 = range1 + (int) (Math.random() * (1000));
                 goalNumber = range1 + (int) (Math.random() * (range2 - range1));
 
+                System.out.println(goalNumber);
                 while (!correct) {
                     if (pastGuess.size() > 0)
                         System.out.println("Your past guesses were: " + pastGuess);
@@ -186,6 +190,7 @@ public class ForLoops {
                     }
                 }
                 System.out.println("Would you like to play again \n (Yes or Y to continue, anything else to exit");
+                s.nextLine();
                 cont = s.nextLine();
                 if (cont.equalsIgnoreCase("y") || cont.equalsIgnoreCase("yes")) {
                 } else {

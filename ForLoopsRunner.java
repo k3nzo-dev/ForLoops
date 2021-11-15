@@ -96,6 +96,7 @@ public class ForLoopsRunner
                              " primes between " + imput1 + " and " + imput2);// only prints the amount of primes
                      System.out.println("Would you like a list of all of those primes?" +
                              "(Enter Y,Yes, or 1)");
+                     s.nextLine();
                      String primesChoice = s.nextLine();
                      if (primesChoice.equalsIgnoreCase("y")
                              || primesChoice.equalsIgnoreCase("yes")
@@ -123,7 +124,6 @@ public class ForLoopsRunner
                      System.out.println("Invalid input");
                      System.out.println();
                   }
-
 
                default:
                   break;
